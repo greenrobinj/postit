@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_board
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
  
   def index
     @topics = @board.topics
@@ -11,18 +11,20 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = @board.topic.new
+    @topic = @board.topics.new
+    render :new
+
   end
 
   def edit
   end
 
   def create
-    @topic = @board.create(topic_params)
+    @topic = @board.topics.create(topic_params)
     if @topic.save
       redirect_to [@board,@topic]
     else
-      render :form
+      render :show
     end
   end
 
@@ -30,7 +32,7 @@ class TopicsController < ApplicationController
     if @topic.update(topic_params)
       redirect_to [@board, @topic]
     else
-      render :form
+      render :show
     end
   end
 

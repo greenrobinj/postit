@@ -10,7 +10,12 @@
       <%= @board.name %> 
     </p>
   <div class="meta">
-    <%= @board.order %>
+  <ul>
+    <li>
+  
+      <%=@board.order%>
+    </li>
+  </ul>
   </div>
   <div class="description">
     <%= @board.order %>
@@ -18,7 +23,7 @@
   </div>
  </div>
  <div class="extra content">
-  <%= link_to 'Topic', new_board_topic_path(@board) %> |
+  <%= link_to 'Add Topic', new_board_topic_path(@board.id) %> |
   <%= link_to 'Edit', edit_board_path(@board) %> |
   <%= link_to 'Back', boards_path %>
  </div>

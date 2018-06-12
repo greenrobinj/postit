@@ -1,0 +1,12 @@
+
+<h3>
+<%= form_for [@board, @topic] do |f| %>
+  <%= f.label :title  %>
+  <%= f.text_field :title%>
+  <%= f.label :order %>
+  <%= f.text_field :order%>
+  <%= f.button :submit %>
+<% end %>
+</h3>
+
+  <h4> <%= link_to 'Back', boards_path %></h4>

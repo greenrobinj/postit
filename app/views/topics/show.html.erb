@@ -1,0 +1,8 @@
+<h1>Topic#show</h1>
+
+
+<h1><%= @board.id.@topic.title %></h1>
+<hr />
+<p>What would you like to do?</p>
+<%= link_to 'Add Description',new_board_topic_path(@board, @topic) %>
+
